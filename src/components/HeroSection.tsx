@@ -1,15 +1,12 @@
+
 import React from 'react';
 import { Heart, Star, Sparkles } from 'lucide-react';
-import RainbowBackground from './RainbowBackground';
 
 const HeroSection = () => {
   return (
     <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden gradient-candy">
-      {/* Three.js Rainbow Background */}
-      <RainbowBackground />
-      
       {/* Animated background elements */}
-      <div className="absolute inset-0 z-10">
+      <div className="absolute inset-0">
         <div className="absolute top-20 left-10 animate-float">
           <Star className="text-white/30 w-8 h-8" />
         </div>
@@ -24,7 +21,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-20">
+      <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8 animate-fade-in">
             <img 
@@ -62,7 +59,7 @@ const HeroSection = () => {
       </div>
       
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
         </div>
