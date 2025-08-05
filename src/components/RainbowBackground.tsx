@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
@@ -61,17 +60,57 @@ const RainbowBackground = () => {
       
       const canvas = mountRef.current;
       scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x000000); // Fundo transparente/preto
+      
+      // Criando um gradiente colorido como fundo usando as cores do gradient-candy
+      const gradientColors = [
+        new THREE.Color('#90E0A0'), // candy-green
+        new THREE.Color('#FFB6C1'), // candy-pink
+        new THREE.Color('#87CEEB'), // candy-blue
+        new THREE.Color('#DDA0DD'), // candy-purple
+        new THREE.Color('#F0E68C')  // candy-yellow
+      ];
+      
+      // Criar um plano de fundo com gradiente
+      const backgroundGeometry = new THREE.PlaneGeometry(100, 100);
+      const backgroundMaterial = new THREE.ShaderMaterial({
+        uniforms: {
+          topColor: { value: gradientColors[0] },
+          bottomColor: { value: gradientColors[4] },
+          offset: { value: 33 },
+          exponent: { value: 0.6 }
+        },
+        vertexShader: `
+          varying vec3 vWorldPosition;
+          void main() {
+            vec4 worldPosition = modelMatrix * vec4(position, 1.0);
+            vWorldPosition = worldPosition.xyz;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          }
+        `,
+        fragmentShader: `
+          uniform vec3 topColor;
+          uniform vec3 bottomColor;
+          uniform float offset;
+          uniform float exponent;
+          varying vec3 vWorldPosition;
+          void main() {
+            float h = normalize(vWorldPosition + offset).y;
+            gl_FragColor = vec4(mix(bottomColor, topColor, max(pow(max(h, 0.0), exponent), 0.0)), 1.0);
+          }
+        `,
+        side: THREE.BackSide
+      });
+      
+      const backgroundMesh = new THREE.Mesh(backgroundGeometry, backgroundMaterial);
+      backgroundMesh.position.z = -50;
+      scene.add(backgroundMesh);
 
       camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
       camera.position.z = 25;
 
-      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      renderer.setClearColor(0x000000, 0); // Fundo transparente
-
-      // Não precisamos de luzes, pois MeshBasicMaterial não é afetado por elas
 
       const rainbowCount = 40;
       for (let i = 0; i < rainbowCount; i++) {
