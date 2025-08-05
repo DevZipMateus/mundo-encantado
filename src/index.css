@@ -101,7 +101,27 @@
 
   /* Responsive container improvements */
   .container {
-    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full max-w-7xl mx-auto;
+  }
+  
+  /* Ensure proper spacing on all screen sizes */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 }
 
@@ -178,6 +198,18 @@
   .hero-gradient {
     padding-bottom: env(safe-area-inset-bottom, 0);
   }
+  
+  /* Prevent text overflow on mobile */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Better mobile spacing for sections */
+  section {
+    padding-left: env(safe-area-inset-left, 0);
+    padding-right: env(safe-area-inset-right, 0);
+  }
 }
 
 /* Prevent horizontal scroll on all screen sizes */
@@ -188,4 +220,17 @@
 body, html {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+  .text-gradient {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+    line-height: 1.2;
+  }
+  
+  .card-candy {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
