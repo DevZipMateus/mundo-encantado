@@ -9,6 +9,7 @@ const RainbowBackground = () => {
     let renderer: THREE.WebGLRenderer, scene: THREE.Scene, camera: THREE.PerspectiveCamera;
     let animationFrameId: number;
     const fallingObjects: THREE.Mesh[] = [];
+    let backgroundMesh: THREE.Mesh;
 
     // --- Shader para o Fundo Gradiente Animado ---
     const vertexShader = `
@@ -64,7 +65,7 @@ const RainbowBackground = () => {
         depthWrite: false, // Para garantir que fique sempre no fundo
       });
 
-      const backgroundMesh = new THREE.Mesh(backgroundGeometry, backgroundMaterial);
+      backgroundMesh = new THREE.Mesh(backgroundGeometry, backgroundMaterial);
       backgroundMesh.position.z = -1; // Coloca um pouco atrás do centro da cena
       scene.add(backgroundMesh);
 
@@ -111,11 +112,8 @@ const RainbowBackground = () => {
       const elapsedTime = performance.now() * 0.001;
       
       // Atualiza o tempo no shader do fundo para animar o gradiente
-      if(scene.children[0] && scene.children[0].material && 'uniforms' in scene.children[0].material) {
-        const material = scene.children[0].material as THREE.ShaderMaterial;
-        if (material.uniforms) {
-          material.uniforms.u_time.value = elapsedTime;
-        }
+      if (backgroundMesh && backgroundMesh.material instanceof THREE.ShaderMaterial) {
+        backgroundMesh.material.uniforms.u_time.value = elapsedTime;
       }
       
       fallingObjects.forEach(obj => {
