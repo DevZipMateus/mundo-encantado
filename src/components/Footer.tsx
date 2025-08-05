@@ -1,13 +1,20 @@
+
 import React from 'react';
 import { Heart, Instagram, Phone, Mail, MapPin } from 'lucide-react';
+
 const Footer = () => {
-  return <footer className="bg-gradient-to-br from-candy-purple-dark to-candy-pink-dark text-white">
+  return (
+    <footer className="bg-gradient-to-br from-candy-purple-dark to-candy-pink-dark text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Logo e Descrição */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start mb-4">
-              <img src="/lovable-uploads/7961030c-c58e-434b-a80d-45e71f32a7a0.png" alt="Mundo Encantado" className="h-12 w-auto mr-3" />
+              <img 
+                src="/lovable-uploads/7961030c-c58e-434b-a80d-45e71f32a7a0.png" 
+                alt="Mundo Encantado"
+                className="h-12 w-auto mr-3"
+              />
             </div>
             <p className="font-rounded text-white/90 mb-4 leading-relaxed">
               No Mundo Encantado, cada peça é escolhida com carinho para vestir 
@@ -79,9 +86,14 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center">
-          <p className="font-rounded text-white/70 text-sm">© 2025 Mundo Encantado. Todos os direitos reservados. Desenvolvido com 💖 para vestir sonhos e criar memórias.</p>
+          <p className="font-rounded text-white/70 text-sm">
+            © 2024 Mundo Encantado. Todos os direitos reservados. 
+            Desenvolvido com 💖 para vestir sonhos e criar memórias.
+          </p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

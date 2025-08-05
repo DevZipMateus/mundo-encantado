@@ -1,14 +1,10 @@
 
 import React from 'react';
 import { Heart, Star, Sparkles } from 'lucide-react';
-import RainbowEmojiBackground from './RainbowEmojiBackground';
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Three.js Rainbow Emoji Background */}
-      <RainbowEmojiBackground />
-      
+    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden gradient-candy">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 animate-float">
