@@ -12,19 +12,21 @@ const RainbowAnimation = ({ targetSelector = '.rainbow-container' }: RainbowAnim
   useEffect(() => {
     if (!containerRef.current) return;
 
+    // Variáveis Globais
     let renderer: THREE.WebGLRenderer;
-    let scene: THREE.Scene;
-    let camera: THREE.PerspectiveCamera;
     let animationFrameId: number;
+    let sceneBG: THREE.Scene, cameraBG: THREE.OrthographicCamera; // Para o fundo 2D
+    let sceneFG: THREE.Scene, cameraFG: THREE.PerspectiveCamera; // Para os emojis 3D (Foreground)
     const fallingEmojis: THREE.Mesh[] = [];
 
     const targetElement = containerRef.current;
 
+    // --- Shader para o Fundo Gradiente ---
     const vertexShader = `
       varying vec2 vUv;
       void main() {
         vUv = uv;
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        gl_Position = vec4(position, 1.0);
       }
     `;
 
@@ -35,11 +37,13 @@ const RainbowAnimation = ({ targetSelector = '.rainbow-container' }: RainbowAnim
         return a + b*cos( 6.28318*(c*t+d) );
       }
       void main() {
-        vec3 finalColor = palette(vUv.y + u_time * 0.1, vec3(0.5), vec3(0.5), vec3(1.0), vec3(0.0, 0.33, 0.67));
+        vec2 uv = vUv;
+        vec3 finalColor = palette(uv.y + u_time * 0.2, vec3(0.5), vec3(0.5), vec3(1.0), vec3(0.00, 0.10, 0.20));
         gl_FragColor = vec4(finalColor, 1.0);
       }
     `;
-
+    
+    // --- Função do Emoji ---
     const createEmojiTexture = (emoji: string) => {
       const canvas = document.createElement('canvas');
       const size = 128;
@@ -50,19 +54,15 @@ const RainbowAnimation = ({ targetSelector = '.rainbow-container' }: RainbowAnim
         context.font = `bold ${size * 0.8}px sans-serif`;
         context.textAlign = 'center';
         context.textBaseline = 'middle';
-        context.fillText(emoji, size / 2, size / 2);
+        context.fillText(emoji, size / 2, size / 2 + size * 0.08); // Ajuste fino vertical
       }
       return new THREE.CanvasTexture(canvas);
     };
 
     const init = () => {
-      scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(75, targetElement.offsetWidth / targetElement.offsetHeight, 0.1, 1000);
-      camera.position.z = 20;
-
+      // --- Configuração principal ---
       const canvas = document.createElement('canvas');
       targetElement.appendChild(canvas);
-      
       canvas.style.position = 'absolute';
       canvas.style.top = '0';
       canvas.style.left = '0';
@@ -71,22 +71,25 @@ const RainbowAnimation = ({ targetSelector = '.rainbow-container' }: RainbowAnim
       canvas.style.zIndex = '0';
 
       renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
-      renderer.setSize(targetElement.offsetWidth, targetElement.offsetHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(targetElement.offsetWidth, targetElement.offsetHeight);
 
-      // Background
+      // --- CENA 1: Fundo com Câmera Ortográfica ---
+      sceneBG = new THREE.Scene();
+      cameraBG = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
       const backgroundMaterial = new THREE.ShaderMaterial({
         vertexShader,
         fragmentShader,
         uniforms: { u_time: { value: 0.0 } },
-        depthWrite: false,
       });
-      const backgroundGeometry = new THREE.PlaneGeometry(2, 2);
-      const backgroundMesh = new THREE.Mesh(backgroundGeometry, backgroundMaterial);
-      backgroundMesh.position.z = -1;
-      scene.add(backgroundMesh);
+      const backgroundMesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), backgroundMaterial);
+      sceneBG.add(backgroundMesh);
+
+      // --- CENA 2: Emojis com Câmera de Perspectiva ---
+      sceneFG = new THREE.Scene();
+      cameraFG = new THREE.PerspectiveCamera(75, targetElement.offsetWidth / targetElement.offsetHeight, 0.1, 1000);
+      cameraFG.position.z = 20;
       
-      // Emojis
       const emojiTexture = createEmojiTexture('🌈');
       const emojiMaterial = new THREE.MeshBasicMaterial({ map: emojiTexture, transparent: true });
       const emojiGeometry = new THREE.PlaneGeometry(1.5, 1.5);
@@ -99,7 +102,7 @@ const RainbowAnimation = ({ targetSelector = '.rainbow-container' }: RainbowAnim
           velocityY: (Math.random() * 0.03) + 0.02,
           rotationSpeed: (Math.random() - 0.5) * 0.02
         };
-        scene.add(emojiMesh);
+        sceneFG.add(emojiMesh);
         fallingEmojis.push(emojiMesh);
       }
 
@@ -107,11 +110,16 @@ const RainbowAnimation = ({ targetSelector = '.rainbow-container' }: RainbowAnim
     };
 
     const animate = () => {
+      animationFrameId = requestAnimationFrame(animate);
+
       const elapsedTime = performance.now() * 0.0001;
-      if (scene.children[0] && 'material' in scene.children[0] && scene.children[0].material instanceof THREE.ShaderMaterial) {
-        scene.children[0].material.uniforms.u_time.value = elapsedTime;
+      
+      // Anima o fundo
+      if (sceneBG.children[0] && 'material' in sceneBG.children[0] && sceneBG.children[0].material instanceof THREE.ShaderMaterial) {
+        sceneBG.children[0].material.uniforms.u_time.value = elapsedTime;
       }
       
+      // Anima os emojis
       fallingEmojis.forEach(obj => {
         obj.position.y -= obj.userData.velocityY;
         obj.rotation.z += obj.userData.rotationSpeed;
@@ -121,17 +129,29 @@ const RainbowAnimation = ({ targetSelector = '.rainbow-container' }: RainbowAnim
         }
       });
 
-      renderer.render(scene, camera);
-      animationFrameId = requestAnimationFrame(animate);
+      // Renderiza as duas cenas
+      renderer.autoClear = false; // Importante: não limpa a tela entre os renders
+      renderer.clear();
+      
+      // Renderiza o fundo primeiro
+      renderer.render(sceneBG, cameraBG);
+      
+      // Renderiza os emojis por cima
+      renderer.clearDepth(); // Limpa apenas o buffer de profundidade
+      renderer.render(sceneFG, cameraFG);
     };
 
     const handleResize = () => {
       const width = targetElement.offsetWidth;
       const height = targetElement.offsetHeight;
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-      renderer.setSize(width, height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      if (cameraFG) {
+        cameraFG.aspect = width / height;
+        cameraFG.updateProjectionMatrix();
+      }
+      if (renderer) {
+        renderer.setSize(width, height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      }
     };
 
     init();
