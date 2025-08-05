@@ -65,17 +65,20 @@ const AboutSection = () => {
           </div>
           
           <div className="relative">
-            <div className="card-candy p-8 text-center animate-float">
-              <div className="w-24 h-24 bg-gradient-to-br from-candy-pink to-candy-purple rounded-full mx-auto mb-6 flex items-center justify-center">
-                <Sparkles className="text-white w-12 h-12" />
-              </div>
-              <h4 className="text-2xl font-playful font-bold text-candy-purple-dark mb-4">
-                Nossa Missão
-              </h4>
-              <p className="text-gray-600 font-rounded">
-                Transformar momentos simples em memórias especiais, 
-                vestindo cada criança com carinho, qualidade e muita magia.
-              </p>
+            <div className="card-candy p-4 overflow-hidden animate-float">
+              <video
+                className="w-full h-full rounded-2xl object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                disablePictureInPicture
+                controlsList="nodownload nofullscreen noremoteplayback"
+                style={{ pointerEvents: 'none' }}
+              >
+                <source src="/lovable-uploads/mundo.mp4" type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+              </video>
             </div>
           </div>
         </div>
