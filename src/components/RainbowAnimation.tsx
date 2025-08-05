@@ -13,9 +13,10 @@ const RainbowAnimation = ({ targetSelector = '.rainbow-container' }: RainbowAnim
     if (!containerRef.current) return;
 
     let renderer: THREE.WebGLRenderer;
+    let scene: THREE.Scene;
+    let camera: THREE.PerspectiveCamera;
     let animationFrameId: number;
-    let scene: THREE.Scene, camera: THREE.PerspectiveCamera;
-    const fallingEmojis: THREE.Mesh[] = [];
+    const fallingObjects: THREE.Mesh[] = [];
 
     const targetElement = containerRef.current;
 
@@ -29,14 +30,19 @@ const RainbowAnimation = ({ targetSelector = '.rainbow-container' }: RainbowAnim
         context.font = `bold ${size * 0.8}px sans-serif`;
         context.textAlign = 'center';
         context.textBaseline = 'middle';
-        context.fillText(emoji, size / 2, size / 2 + size * 0.08);
+        context.fillText(emoji, size / 2, size / 2 + 10);
       }
       return new THREE.CanvasTexture(canvas);
     };
 
     const init = () => {
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(75, targetElement.offsetWidth / targetElement.offsetHeight, 0.1, 1000);
+      camera.position.z = 20;
+
       const canvas = document.createElement('canvas');
       targetElement.appendChild(canvas);
+
       canvas.style.position = 'absolute';
       canvas.style.top = '0';
       canvas.style.left = '0';
@@ -44,18 +50,14 @@ const RainbowAnimation = ({ targetSelector = '.rainbow-container' }: RainbowAnim
       canvas.style.height = '100%';
       canvas.style.zIndex = '1';
 
-      renderer = new THREE.WebGLRenderer({ 
-        canvas: canvas, 
-        antialias: true, 
-        alpha: true 
+      renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+        antialias: true,
+        alpha: true
       });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setSize(targetElement.offsetWidth, targetElement.offsetHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-      scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(75, targetElement.offsetWidth / targetElement.offsetHeight, 0.1, 1000);
-      camera.position.z = 20;
-      
       const emojiTexture = createEmojiTexture('🌈');
       const emojiMaterial = new THREE.MeshBasicMaterial({ map: emojiTexture, transparent: true });
       const emojiGeometry = new THREE.PlaneGeometry(1.5, 1.5);
@@ -69,16 +71,14 @@ const RainbowAnimation = ({ targetSelector = '.rainbow-container' }: RainbowAnim
           rotationSpeed: (Math.random() - 0.5) * 0.02
         };
         scene.add(emojiMesh);
-        fallingEmojis.push(emojiMesh);
+        fallingObjects.push(emojiMesh);
       }
 
       animate();
     };
 
     const animate = () => {
-      animationFrameId = requestAnimationFrame(animate);
-      
-      fallingEmojis.forEach(obj => {
+      fallingObjects.forEach(obj => {
         obj.position.y -= obj.userData.velocityY;
         obj.rotation.z += obj.userData.rotationSpeed;
         if (obj.position.y < -25) {
@@ -86,10 +86,10 @@ const RainbowAnimation = ({ targetSelector = '.rainbow-container' }: RainbowAnim
           obj.position.x = (Math.random() - 0.5) * 50;
         }
       });
-
       renderer.render(scene, camera);
+      animationFrameId = requestAnimationFrame(animate);
     };
-
+    
     const handleResize = () => {
       const width = targetElement.offsetWidth;
       const height = targetElement.offsetHeight;

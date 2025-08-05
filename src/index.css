@@ -69,7 +69,7 @@
   }
 
   .hero-gradient {
-    background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9f43, #1dd1a1, #48dbfb, #54a0ff, #be2edd);
+    background: linear-gradient(135deg, #d4a4eb, #a4d8eb, #a4ebc4, #ebdfa4, #eba4a4);
     background-size: 400% 400%;
     animation: gradient-animation 15s ease infinite;
   }
