@@ -1,7 +1,20 @@
+
 import React from 'react';
 import { MapPin, Clock, Phone, Mail, Navigation } from 'lucide-react';
 
 const LocationSection = () => {
+  const address = "R. Firmino de Paula, 741 - 5, Centro, Ibirubá - RS, 98200-000";
+  const phoneNumber = "5499164-7113";
+  
+  const handleNavigationClick = () => {
+    const encodedAddress = encodeURIComponent(address);
+    window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`, '_blank');
+  };
+
+  const handleWhatsAppClick = () => {
+    window.open(`https://wa.me/${phoneNumber}`, '_blank');
+  };
+
   return (
     <section id="localizacao" className="py-20 bg-gradient-to-br from-candy-blue/10 to-candy-purple/10">
       <div className="container mx-auto px-4">
@@ -86,11 +99,17 @@ const LocationSection = () => {
             </div>
 
             <div className="flex space-x-4">
-              <button className="flex-1 bg-gradient-to-r from-candy-pink-dark to-candy-purple-dark text-white px-6 py-3 rounded-full font-playful font-bold hover:transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
+              <button 
+                onClick={handleNavigationClick}
+                className="flex-1 bg-gradient-to-r from-candy-pink-dark to-candy-purple-dark text-white px-6 py-3 rounded-full font-playful font-bold hover:transform hover:scale-105 transition-all duration-300 flex items-center justify-center"
+              >
                 <Navigation className="w-5 h-5 mr-2" />
                 Como Chegar
               </button>
-              <button className="flex-1 border-2 border-candy-purple-dark text-candy-purple-dark px-6 py-3 rounded-full font-playful font-bold hover:bg-candy-purple-dark hover:text-white transition-all duration-300">
+              <button 
+                onClick={handleWhatsAppClick}
+                className="flex-1 border-2 border-candy-purple-dark text-candy-purple-dark px-6 py-3 rounded-full font-playful font-bold hover:bg-candy-purple-dark hover:text-white transition-all duration-300"
+              >
                 WhatsApp
               </button>
             </div>
@@ -99,7 +118,7 @@ const LocationSection = () => {
           {/* Mapa do Google Maps */}
           <div className="card-candy p-2 h-96 lg:h-full min-h-[400px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.123456789!2d-53.08123456789!3d-28.12345678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDA3JzI0LjQiUyA1M8KwMDQnNTIuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr&q=R.%20Firmino%20de%20Paula,%20741%20-%205%20-%20Centro,%20Ibiru%C3%A1%20-%20RS,%2098200-000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3513.4567891234567!2d-53.08355999999999!3d-28.583399999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sR.%20Firmino%20de%20Paula%2C%20741%20-%205%2C%20Centro%2C%20Ibiru%C3%BA%C3%A1%20-%20RS%2C%2098200-000!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr"
               width="100%"
               height="100%"
               style={{ border: 0, borderRadius: '1rem' }}
