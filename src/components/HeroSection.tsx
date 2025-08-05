@@ -1,10 +1,14 @@
 
 import React from 'react';
 import { Heart, Star, Sparkles } from 'lucide-react';
+import RainbowBackground from './RainbowBackground';
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden gradient-candy">
+    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Three.js Rainbow Background */}
+      <RainbowBackground />
+      
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 animate-float">
