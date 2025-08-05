@@ -68,6 +68,12 @@
     background: linear-gradient(135deg, #90E0A0 0%, #FFB6C1 25%, #87CEEB 50%, #DDA0DD 75%, #F0E68C 100%);
   }
 
+  .hero-gradient {
+    background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9f43, #1dd1a1, #48dbfb, #54a0ff, #be2edd);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+  }
+
   .text-gradient {
     background: linear-gradient(135deg, #5CB85C, #E91E63, #2196F3, #9C27B0);
     -webkit-background-clip: text;
@@ -84,6 +90,12 @@
   .card-candy {
     @apply bg-white/90 backdrop-blur-sm rounded-3xl shadow-candy border border-candy-pink/20;
   }
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* WhatsApp button styles */
