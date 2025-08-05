@@ -74,6 +74,12 @@
     animation: gradient-animation 15s ease infinite;
   }
 
+  .sections-gradient {
+    background: linear-gradient(90deg, #ffb6c1, #dda0dd, #fffacd, #add8e6);
+    background-size: 200% 200%;
+    animation: gradient-animation 20s ease infinite;
+  }
+
   .text-gradient {
     background: linear-gradient(135deg, #5CB85C, #E91E63, #2196F3, #9C27B0);
     -webkit-background-clip: text;
