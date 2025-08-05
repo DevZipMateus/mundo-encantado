@@ -69,9 +69,9 @@
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, #d4a4eb, #a4d8eb, #a4ebc4, #ebdfa4, #eba4a4);
-    background-size: 400% 400%;
-    animation: gradient-animation 15s ease infinite;
+    background: linear-gradient(270deg, #ffb6c1, #dda0dd, #fffacd, #add8e6);
+    background-size: 600% 600%;
+    animation: movimentoGradiente 15s ease infinite;
   }
 
   .sections-gradient {
@@ -99,6 +99,12 @@
 }
 
 @keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes movimentoGradiente {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }

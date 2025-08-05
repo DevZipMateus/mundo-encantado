@@ -30,7 +30,7 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 text-center relative z-20">
         <div className="max-w-4xl mx-auto">
-          <div className="mb-8 animate-fade-in">
+          <div className="mb-8 animate-fade-in" style={{ textShadow: '0px 2px 4px rgba(0,0,0,0.5)' }}>
             <img 
               src="/lovable-uploads/7961030c-c58e-434b-a80d-45e71f32a7a0.png" 
               alt="Mundo Encantado"
@@ -38,14 +38,14 @@ const HeroSection = () => {
             />
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-playful font-bold text-white mb-6 animate-fade-in drop-shadow-lg" style={{animationDelay: '0.2s'}}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-playful font-bold text-white mb-6 animate-fade-in drop-shadow-lg" style={{animationDelay: '0.2s', textShadow: '0px 2px 4px rgba(0,0,0,0.5)'}}>
             Bem-vindos ao
             <span className="block text-white font-black">
               Mundo Encantado
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-8 font-rounded max-w-2xl mx-auto animate-fade-in drop-shadow-lg" style={{animationDelay: '0.4s'}}>
+          <p className="text-xl md:text-2xl text-white/90 mb-8 font-rounded max-w-2xl mx-auto animate-fade-in drop-shadow-lg" style={{animationDelay: '0.4s', textShadow: '0px 2px 4px rgba(0,0,0,0.5)'}}>
             Onde cada peça conta uma história mágica e cada criança brilha com seu próprio encanto
           </p>
           
@@ -58,7 +58,7 @@ const HeroSection = () => {
             </button>
           </div>
           
-          <div className="mt-12 text-white/80 animate-fade-in drop-shadow-lg" style={{animationDelay: '0.8s'}}>
+          <div className="mt-12 text-white/80 animate-fade-in drop-shadow-lg" style={{animationDelay: '0.8s', textShadow: '0px 2px 4px rgba(0,0,0,0.5)'}}>
             <p className="text-sm mb-2">📍 Firmino de Paula, 741 - Centro, Ibirubá/RS</p>
             <p className="text-sm">📱 (54) 99164-7113</p>
           </div>
