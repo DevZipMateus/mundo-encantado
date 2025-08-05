@@ -97,20 +97,19 @@ const LocationSection = () => {
             </div>
           </div>
 
-          {/* Mapa */}
+          {/* Mapa do Google Maps */}
           <div className="card-candy p-2 h-96 lg:h-full min-h-[400px]">
-            <div className="w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-candy-green/20 to-candy-blue/20 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-candy-purple-dark mx-auto mb-4" />
-                <p className="text-candy-purple-dark font-playful font-bold">
-                  Mapa Interativo
-                </p>
-                <p className="text-gray-600 text-sm font-rounded mt-2">
-                  Firmino de Paula, 741, Sala 5<br />
-                  Centro, Ibirubá/RS
-                </p>
-              </div>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.123456789!2d-53.08123456789!3d-28.12345678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDA3JzI0LjQiUyA1M8KwMDQnNTIuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr&q=R.%20Firmino%20de%20Paula,%20741%20-%205%20-%20Centro,%20Ibiru%C3%A1%20-%20RS,%2098200-000"
+              width="100%"
+              height="100%"
+              style={{ border: 0, borderRadius: '1rem' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização Mundo Encantado - Ibirubá/RS"
+              className="rounded-2xl"
+            />
           </div>
         </div>
       </div>
