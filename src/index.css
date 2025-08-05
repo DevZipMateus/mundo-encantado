@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,35 +8,35 @@
 
 @layer base {
   :root {
-    --background: 10 10% 4%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
-    --card: 10 10% 6%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
 
-    --popover: 10 10% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
 
-    --primary: 120 100% 50%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 290 84% 60%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 16%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
 
-    --muted: 0 0% 16%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 0 100% 50%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 330 81% 60%;
+    --accent-foreground: 240 5.9% 10%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 16%;
-    --ring: 120 100% 50%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 290 84% 60%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -54,80 +55,66 @@
   }
 
   body {
-    @apply bg-urban-black text-foreground font-inter;
-    overflow-x: hidden;
+    @apply bg-background text-foreground font-rounded;
   }
 
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
   }
 }
 
 @layer components {
-  .hero-text {
-    background: linear-gradient(45deg, #39ff14, #ffff00, #ff3030);
-    background-size: 200% 200%;
+  .gradient-candy {
+    background: linear-gradient(135deg, #90E0A0 0%, #FFB6C1 25%, #87CEEB 50%, #DDA0DD 75%, #F0E68C 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #5CB85C, #E91E63, #2196F3, #9C27B0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradient 3s ease infinite;
   }
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  .shadow-candy {
+    box-shadow: 0 10px 30px rgba(144, 224, 160, 0.3), 
+                0 6px 20px rgba(255, 182, 193, 0.2), 
+                0 4px 15px rgba(135, 206, 235, 0.2);
   }
 
-  .urban-gradient {
-    background: linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 50%, #3a3a3a 100%);
-  }
-
-  .neon-border {
-    border: 2px solid #39ff14;
-    box-shadow: 0 0 10px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.1);
-  }
-
-  .glass-effect {
-    background: rgba(42, 42, 42, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  /* Mobile optimizations */
-  @media (max-width: 640px) {
-    .hero-text {
-      line-height: 1.1;
-      word-break: break-word;
-    }
-  }
-
-  /* Improved background handling */
-  @media (max-width: 768px) {
-    [style*="background-attachment: fixed"] {
-      background-attachment: scroll !important;
-    }
+  .card-candy {
+    @apply bg-white/90 backdrop-blur-sm rounded-3xl shadow-candy border border-candy-pink/20;
   }
 }
 
-/* Additional responsive utilities */
-@layer utilities {
-  .text-responsive {
-    @apply text-sm sm:text-base md:text-lg;
-  }
-  
-  .heading-responsive {
-    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
-  }
-  
-  .padding-responsive {
-    @apply px-4 sm:px-6 lg:px-8;
+/* WhatsApp button styles */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+  animation: bounce-gentle 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
   }
 }

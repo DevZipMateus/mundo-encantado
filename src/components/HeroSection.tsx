@@ -1,44 +1,67 @@
 
 import React from 'react';
+import { Heart, Star, Sparkles } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/lovable-uploads/bff28d63-8e60-4f7c-aa2a-300e95e8952a.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        <div className="absolute inset-0 bg-black/70 sm:bg-black/60"></div>
+    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden gradient-candy">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 animate-float">
+          <Star className="text-white/30 w-8 h-8" />
+        </div>
+        <div className="absolute top-40 right-20 animate-bounce-gentle" style={{animationDelay: '0.5s'}}>
+          <Heart className="text-white/30 w-6 h-6" />
+        </div>
+        <div className="absolute bottom-32 left-20 animate-float" style={{animationDelay: '1s'}}>
+          <Sparkles className="text-white/30 w-10 h-10" />
+        </div>
+        <div className="absolute top-60 right-10 animate-bounce-gentle" style={{animationDelay: '1.5s'}}>
+          <Star className="text-white/20 w-4 h-4" />
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-orbitron font-black mb-4 sm:mb-6 leading-tight">
-          <span className="hero-text block sm:inline">VISTA A ATITUDE.</span>
-          <br className="hidden sm:block" />
-          <span className="hero-text block sm:inline">SINTA O PESO DA RUA.</span>
-        </h1>
-        
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-xs sm:max-w-2xl lg:max-w-4xl mx-auto font-inter px-2">
-          Coleções autênticas para quem vive o agora. Bem-vindo à URBNSZN.
-        </p>
-
-        <button className="group relative overflow-hidden bg-urban-neon text-urban-black px-6 sm:px-8 py-3 sm:py-4 font-bold text-base sm:text-lg lg:text-xl tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-urban-neon/50 w-full sm:w-auto max-w-xs sm:max-w-none">
-          <span className="relative z-10">VER COLEÇÃO AGORA</span>
-          <div className="absolute inset-0 bg-urban-flame transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-        </button>
+      <div className="container mx-auto px-4 text-center relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-8 animate-fade-in">
+            <img 
+              src="/lovable-uploads/7961030c-c58e-434b-a80d-45e71f32a7a0.png" 
+              alt="Mundo Encantado"
+              className="mx-auto h-32 md:h-40 w-auto mb-6"
+            />
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-playful font-bold text-white mb-6 animate-fade-in" style={{animationDelay: '0.2s'}}>
+            Bem-vindos ao
+            <span className="block text-gradient font-black">
+              Mundo Encantado
+            </span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-white/90 mb-8 font-rounded max-w-2xl mx-auto animate-fade-in" style={{animationDelay: '0.4s'}}>
+            Onde cada peça conta uma história mágica e cada criança brilha com seu próprio encanto
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{animationDelay: '0.6s'}}>
+            <button className="bg-white text-candy-purple-dark px-8 py-4 rounded-full font-playful font-bold text-lg shadow-candy hover:transform hover:scale-105 transition-all duration-300">
+              Conheça Nossa Magia
+            </button>
+            <button className="border-2 border-white text-white px-8 py-4 rounded-full font-playful font-bold text-lg hover:bg-white hover:text-candy-purple-dark transition-all duration-300">
+              Entre em Contato
+            </button>
+          </div>
+          
+          <div className="mt-12 text-white/80 animate-fade-in" style={{animationDelay: '0.8s'}}>
+            <p className="text-sm mb-2">📍 Firmino de Paula, 741 - Centro, Ibirubá/RS</p>
+            <p className="text-sm">📱 (54) 99164-7113</p>
+          </div>
+        </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-urban-neon rounded-full flex justify-center">
-          <div className="w-1 h-2 sm:h-3 bg-urban-neon rounded-full mt-2 animate-pulse"></div>
+      
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
         </div>
       </div>
     </section>

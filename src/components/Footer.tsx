@@ -1,65 +1,95 @@
 
 import React from 'react';
+import { Heart, Instagram, Phone, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-urban-black border-t border-urban-concrete-light">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="text-3xl font-orbitron font-black text-urban-neon mb-4">
-              URBNSZN
+    <footer className="bg-gradient-to-br from-candy-purple-dark to-candy-pink-dark text-white">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Logo e Descrição */}
+          <div className="text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start mb-4">
+              <img 
+                src="/lovable-uploads/7961030c-c58e-434b-a80d-45e71f32a7a0.png" 
+                alt="Mundo Encantado"
+                className="h-12 w-auto mr-3"
+              />
             </div>
-            <p className="text-gray-400 mb-6 max-w-md">
-              Mais que roupas, somos um movimento. Representando a cultura urbana 
-              autêntica desde 2020.
+            <p className="font-rounded text-white/90 mb-4 leading-relaxed">
+              No Mundo Encantado, cada peça é escolhida com carinho para vestir 
+              os sonhos das crianças e criar memórias mágicas em família.
             </p>
-            <div className="flex space-x-4">
-              <div className="w-10 h-10 bg-urban-concrete rounded-full flex items-center justify-center hover:bg-urban-neon hover:text-urban-black transition-colors duration-300 cursor-pointer">
-                <span className="font-bold">IG</span>
-              </div>
-              <div className="w-10 h-10 bg-urban-concrete rounded-full flex items-center justify-center hover:bg-urban-neon hover:text-urban-black transition-colors duration-300 cursor-pointer">
-                <span className="font-bold">TT</span>
-              </div>
-              <div className="w-10 h-10 bg-urban-concrete rounded-full flex items-center justify-center hover:bg-urban-neon hover:text-urban-black transition-colors duration-300 cursor-pointer">
-                <span className="font-bold">YT</span>
-              </div>
+            <div className="flex items-center justify-center md:justify-start text-white/80">
+              <Heart className="w-4 h-4 mr-2 text-candy-pink" />
+              <span className="font-playful text-sm">Feito com amor desde sempre</span>
             </div>
           </div>
 
-          {/* Links */}
-          <div>
-            <h4 className="text-white font-bold text-lg mb-4">SHOP</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-urban-neon transition-colors duration-300">Coleções</a></li>
-              <li><a href="#" className="hover:text-urban-neon transition-colors duration-300">Lançamentos</a></li>
-              <li><a href="#" className="hover:text-urban-neon transition-colors duration-300">Sale</a></li>
-              <li><a href="#" className="hover:text-urban-neon transition-colors duration-300">Gift Cards</a></li>
+          {/* Links Rápidos */}
+          <div className="text-center">
+            <h4 className="text-lg font-playful font-bold mb-4">Links Rápidos</h4>
+            <ul className="space-y-2 font-rounded">
+              <li>
+                <a href="#inicio" className="text-white/80 hover:text-white transition-colors duration-300">
+                  Início
+                </a>
+              </li>
+              <li>
+                <a href="#sobre" className="text-white/80 hover:text-white transition-colors duration-300">
+                  Sobre Nós
+                </a>
+              </li>
+              <li>
+                <a href="#servicos" className="text-white/80 hover:text-white transition-colors duration-300">
+                  Nossos Serviços
+                </a>
+              </li>
+              <li>
+                <a href="#depoimentos" className="text-white/80 hover:text-white transition-colors duration-300">
+                  Depoimentos
+                </a>
+              </li>
+              <li>
+                <a href="#contato" className="text-white/80 hover:text-white transition-colors duration-300">
+                  Contato
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Support */}
-          <div>
-            <h4 className="text-white font-bold text-lg mb-4">SUPORTE</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-urban-neon transition-colors duration-300">Contato</a></li>
-              <li><a href="#" className="hover:text-urban-neon transition-colors duration-300">Trocas & Devoluções</a></li>
-              <li><a href="#" className="hover:text-urban-neon transition-colors duration-300">Guia de Tamanhos</a></li>
-              <li><a href="#" className="hover:text-urban-neon transition-colors duration-300">FAQ</a></li>
-            </ul>
+          {/* Contato */}
+          <div className="text-center md:text-left">
+            <h4 className="text-lg font-playful font-bold mb-4">Fale Conosco</h4>
+            <div className="space-y-3 font-rounded text-sm">
+              <div className="flex items-center justify-center md:justify-start">
+                <MapPin className="w-4 h-4 mr-2 text-candy-green" />
+                <span className="text-white/80">
+                  Firmino de Paula, 741, Sala 5<br />
+                  Centro, Ibirubá/RS
+                </span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start">
+                <Phone className="w-4 h-4 mr-2 text-candy-blue" />
+                <span className="text-white/80">(54) 99164-7113</span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start">
+                <Mail className="w-4 h-4 mr-2 text-candy-yellow" />
+                <span className="text-white/80">mundoencantadochildrens@gmail.com</span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start">
+                <Instagram className="w-4 h-4 mr-2 text-candy-pink" />
+                <span className="text-white/80">@mundoencantado.ibiruba</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-urban-concrete-light mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
-            © 2024 URBNSZN. Todos os direitos reservados.
+        <div className="border-t border-white/20 mt-8 pt-8 text-center">
+          <p className="font-rounded text-white/70 text-sm">
+            © 2024 Mundo Encantado. Todos os direitos reservados. 
+            Desenvolvido com 💖 para vestir sonhos e criar memórias.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0 text-sm text-gray-500">
-            <a href="#" className="hover:text-urban-neon transition-colors duration-300">Privacidade</a>
-            <a href="#" className="hover:text-urban-neon transition-colors duration-300">Termos</a>
-            <a href="#" className="hover:text-urban-neon transition-colors duration-300">Cookies</a>
-          </div>
         </div>
       </div>
     </footer>
