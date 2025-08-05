@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Clock, Phone, Mail, Navigation } from 'lucide-react';
 
@@ -28,8 +27,8 @@ const LocationSection = () => {
                     Nosso Endereço
                   </h3>
                   <p className="text-gray-600 font-rounded">
-                    Firmino de Paula, 741, Sala 5<br />
-                    Centro, Ibirubá/RS
+                    R. Firmino de Paula, 741 - 5<br />
+                    Centro, Ibirubá - RS, 98200-000
                   </p>
                 </div>
               </div>
