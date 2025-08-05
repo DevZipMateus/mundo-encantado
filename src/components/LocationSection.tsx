@@ -118,7 +118,7 @@ const LocationSection = () => {
           {/* Mapa do Google Maps */}
           <div className="card-candy p-2 h-96 lg:h-full min-h-[400px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3513.4567891234567!2d-53.08355999999999!3d-28.583399999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sR.%20Firmino%20de%20Paula%2C%20741%20-%205%2C%20Centro%2C%20Ibiru%C3%BA%C3%A1%20-%20RS%2C%2098200-000!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dO0E7x0l_Y6XzQ&q=R.%20Firmino%20de%20Paula%2C%20741%2C%20Centro%2C%20Ibirub%C3%A1%20RS%2C%20Brazil"
               width="100%"
               height="100%"
               style={{ border: 0, borderRadius: '1rem' }}
