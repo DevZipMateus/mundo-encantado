@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { MessageCircle } from 'lucide-react';
 
 const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
@@ -17,7 +16,11 @@ const WhatsAppButton = () => {
       aria-label="Falar no WhatsApp"
       title="Fale conosco no WhatsApp"
     >
-      <MessageCircle size={30} />
+      <img 
+        src="/lovable-uploads/ee01649b-441e-465a-9bbe-db4e87fd912c.png" 
+        alt="WhatsApp" 
+        className="w-8 h-8"
+      />
     </button>
   );
 };
