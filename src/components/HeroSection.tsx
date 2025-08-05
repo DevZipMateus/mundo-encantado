@@ -1,12 +1,16 @@
 
 import React from 'react';
 import { Heart, Star, Sparkles } from 'lucide-react';
+import RainbowAnimation from './RainbowAnimation';
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden gradient-candy">
+    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Rainbow Animation Background */}
+      <RainbowAnimation />
+      
       {/* Animated background elements */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-10">
         <div className="absolute top-20 left-10 animate-float">
           <Star className="text-white/30 w-8 h-8" />
         </div>
@@ -21,7 +25,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-10">
+      <div className="container mx-auto px-4 text-center relative z-20">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8 animate-fade-in">
             <img 
@@ -31,14 +35,14 @@ const HeroSection = () => {
             />
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-playful font-bold text-white mb-6 animate-fade-in" style={{animationDelay: '0.2s'}}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-playful font-bold text-white mb-6 animate-fade-in drop-shadow-lg" style={{animationDelay: '0.2s'}}>
             Bem-vindos ao
             <span className="block text-gradient font-black">
               Mundo Encantado
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-8 font-rounded max-w-2xl mx-auto animate-fade-in" style={{animationDelay: '0.4s'}}>
+          <p className="text-xl md:text-2xl text-white/90 mb-8 font-rounded max-w-2xl mx-auto animate-fade-in drop-shadow-lg" style={{animationDelay: '0.4s'}}>
             Onde cada peça conta uma história mágica e cada criança brilha com seu próprio encanto
           </p>
           
@@ -51,7 +55,7 @@ const HeroSection = () => {
             </button>
           </div>
           
-          <div className="mt-12 text-white/80 animate-fade-in" style={{animationDelay: '0.8s'}}>
+          <div className="mt-12 text-white/80 animate-fade-in drop-shadow-lg" style={{animationDelay: '0.8s'}}>
             <p className="text-sm mb-2">📍 Firmino de Paula, 741 - Centro, Ibirubá/RS</p>
             <p className="text-sm">📱 (54) 99164-7113</p>
           </div>
@@ -59,7 +63,7 @@ const HeroSection = () => {
       </div>
       
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
         </div>
