@@ -56,10 +56,12 @@
 
   body {
     @apply bg-background text-foreground font-rounded;
+    overflow-x: hidden;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 }
 
@@ -95,6 +97,11 @@
 
   .card-candy {
     @apply bg-white/90 backdrop-blur-sm rounded-3xl shadow-candy border border-candy-pink/20;
+  }
+
+  /* Responsive container improvements */
+  .container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
 
@@ -152,6 +159,7 @@
   animation: none;
 }
 
+/* Mobile responsive improvements */
 @media (max-width: 768px) {
   .whatsapp-float {
     width: 50px;
@@ -159,4 +167,25 @@
     bottom: 20px;
     right: 20px;
   }
+  
+  /* Ensure content doesn't go under mobile browser UI */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  /* Better spacing on mobile */
+  .hero-gradient {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+}
+
+/* Prevent horizontal scroll on all screen sizes */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
