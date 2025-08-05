@@ -37,7 +37,9 @@ const GallerySection = () => {
       api.scrollNext();
     }, 3000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [api]);
 
   // Track current slide
@@ -51,7 +53,9 @@ const GallerySection = () => {
     api.on("select", onSelect);
     onSelect();
 
-    return () => api?.off("select", onSelect);
+    return () => {
+      api?.off("select", onSelect);
+    };
   }, [api]);
 
   return (
