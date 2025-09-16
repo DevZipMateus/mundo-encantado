@@ -26,7 +26,7 @@ const ProductsSection = () => {
       icon: ShoppingBag,
       title: "Acessórios",
       description: "Complementos perfeitos para deixar o look ainda mais especial",
-      features: ["Bolsas", "Bonés", "Sapatos", "Bijuterias"]
+      features: ["Bolsas", "Bonés", "Sapatilhas de neoprene", "Laços e tiaras"]
     },
     {
       icon: Droplets,
