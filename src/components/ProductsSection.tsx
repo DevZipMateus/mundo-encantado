@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { ShoppingBag, Shirt, Baby, Users } from 'lucide-react';
+import { ShoppingBag, Shirt, Baby, Users, Droplets, Music, Puzzle } from 'lucide-react';
 
-const ServicesSection = () => {
+const ProductsSection = () => {
   const services = [
     {
       icon: Baby,
@@ -27,23 +27,41 @@ const ServicesSection = () => {
       title: "Acessórios",
       description: "Complementos perfeitos para deixar o look ainda mais especial",
       features: ["Bolsas", "Bonés", "Sapatos", "Bijuterias"]
+    },
+    {
+      icon: Droplets,
+      title: "Perfumaria",
+      description: "Produtos de higiene e cuidados para toda a família",
+      features: ["Sabonetes", "Shampoo", "Condicionador", "Colônias"]
+    },
+    {
+      icon: Music,
+      title: "Ballet e Jazz",
+      description: "Tudo para dança com qualidade e elegância",
+      features: ["Collants", "Saias", "Meia-calça", "Sapatilhas"]
+    },
+    {
+      icon: Puzzle,
+      title: "Brinquedos Educativos",
+      description: "Diversão que estimula o aprendizado e desenvolvimento",
+      features: ["Jogos pedagógicos", "Quebra-cabeças", "Livros infantis", "Material escolar"]
     }
   ];
 
   return (
-    <section id="servicos" className="py-20 sections-gradient">
+    <section id="produtos" className="py-20 sections-gradient">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-playful font-bold text-gradient mb-6">
-            Nossos Serviços Mágicos
+            Nossos Produtos Mágicos
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-rounded">
-            Oferecemos tudo que sua família precisa para vestir cada momento especial 
-            com muito amor e estilo.
+            Descubra nossa incrível variedade de produtos para toda a família, 
+            desde moda até cuidados pessoais e diversão educativa.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div 
               key={index}
@@ -97,4 +115,4 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection;
+export default ProductsSection;
