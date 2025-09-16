@@ -90,8 +90,8 @@ const LocationSection = () => {
                     Horário de Funcionamento
                   </h3>
                   <div className="text-xs sm:text-sm text-gray-600 font-rounded space-y-1">
-                    <p>Segunda a Sexta: 8h às 18h</p>
-                    <p>Sábados: 8h às 17h</p>
+                    <p>Segunda a Sexta: 09:00 às 12:00 - 13:30 às 18:30</p>
+                    <p>Sábados: 09:00 às 15:00</p>
                     <p className="text-candy-purple-dark font-semibold">Domingos: Fechado</p>
                   </div>
                 </div>
