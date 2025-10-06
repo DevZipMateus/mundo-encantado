@@ -8,43 +8,50 @@ const ProductsSection = () => {
       icon: Baby,
       title: "Moda Bebê",
       description: "Roupinhas fofas e confortáveis para os primeiros anos de vida",
-      features: ["0 a 2 anos", "Tecidos macios", "Fácil de vestir", "Segurança total"]
+      features: ["0 a 2 anos", "Tecidos macios", "Fácil de vestir", "Segurança total"],
+      brands: ["Hering", "Fábula e Bento", "Magia Doce", "Alekids", "Lua Encantada", "Santa Rita Baby", "KelyKety", "Rei Rex"]
     },
     {
       icon: Shirt,
       title: "Moda Infantil",
       description: "Peças divertidas e coloridas para crianças cheias de energia",
-      features: ["2 a 10 anos", "Designs únicos", "Durabilidade", "Conforto total"]
+      features: ["2 a 10 anos", "Designs únicos", "Durabilidade", "Conforto total"],
+      brands: ["Acostamento", "Hering", "Fábula e Bento", "Magia Doce", "Alekids", "Lua Encantada", "Santa Rita Baby", "KelyKety", "Rei Rex"]
     },
     {
       icon: Users,
       title: "Infanto Juvenil",
       description: "Estilo moderno para pré-adolescentes que querem se expressar",
-      features: ["10 a 16 anos", "Tendências atuais", "Autoestima", "Personalidade"]
+      features: ["10 a 16 anos", "Tendências atuais", "Autoestima", "Personalidade"],
+      brands: ["Acostamento", "Hering", "Fábula e Bento", "Farm Futura", "Alekids", "Lua Encantada", "BaseD"]
     },
     {
       icon: ShoppingBag,
       title: "Acessórios",
       description: "Complementos perfeitos para deixar o look ainda mais especial",
-      features: ["Bolsas", "Bonés", "Sapatilhas de neoprene", "Laços e tiaras"]
+      features: ["Bolsas", "Bonés", "Sapatilhas de neoprene", "Laços e tiaras"],
+      brands: ["Juju e Lele Laços", "Hering", "UFrog", "Janod", "Lume", "Natura"]
     },
     {
       icon: Droplets,
       title: "Perfumaria",
       description: "Produtos de higiene e cuidados para toda a família",
-      features: ["Sabonetes", "Shampoo", "Condicionador", "Colônias"]
+      features: ["Sabonetes", "Shampoo", "Condicionador", "Colônias"],
+      brands: ["Natura", "O Boticário", "Granado"]
     },
     {
       icon: Music,
       title: "Ballet e Jazz",
       description: "Tudo para dança com qualidade e elegância",
-      features: ["Collants", "Saias", "Meia-calça", "Sapatilhas"]
+      features: ["Collants", "Saias", "Meia-calça", "Sapatilhas"],
+      brands: ["Capezio", "Só Dança", "Lupo"]
     },
     {
       icon: Puzzle,
       title: "Brinquedos Educativos",
       description: "Diversão que estimula o aprendizado e desenvolvimento",
-      features: ["Jogos pedagógicos", "Quebra-cabeças", "Livros infantis", "Material escolar"]
+      features: ["Jogos pedagógicos", "Quebra-cabeças", "Livros infantis", "Material escolar"],
+      brands: ["Janod", "Lume", "Grow", "Estrela"]
     }
   ];
 
