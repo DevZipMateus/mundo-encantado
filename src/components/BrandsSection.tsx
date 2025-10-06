@@ -1,6 +1,7 @@
 import React from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
+import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 import { Baby, Shirt, Users, ShoppingBag, Droplets, Music, Puzzle } from 'lucide-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const BrandsSection = () => {
   const categories = [
@@ -74,6 +75,11 @@ const BrandsSection = () => {
                   align: "start",
                   loop: true,
                 }}
+                plugins={[
+                  Autoplay({
+                    delay: 3000,
+                  }),
+                ]}
                 className="w-full"
               >
                 <CarouselContent className="-ml-2 md:-ml-4">
@@ -87,8 +93,6 @@ const BrandsSection = () => {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="hidden md:flex" />
-                <CarouselNext className="hidden md:flex" />
               </Carousel>
             </div>
           ))}
