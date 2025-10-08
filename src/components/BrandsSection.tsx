@@ -16,6 +16,13 @@ import luaEncantadaLogo from '@/assets/brands/lua-encantada.png';
 import alekidsLogo from '@/assets/brands/alekids.png';
 import viraMexeLogo from '@/assets/brands/vira-mexe.png';
 import seleneLogo from '@/assets/brands/selene.png';
+import cativaLogo from '@/assets/brands/cativa.png';
+import acostamentoKidsLogo from '@/assets/brands/acostamento-kids.png';
+import farmFuturaLogo from '@/assets/brands/farm-futura.png';
+import basedLogo from '@/assets/brands/based.png';
+import acostamentoLogo from '@/assets/brands/acostamento.png';
+import naturaLogo from '@/assets/brands/natura.png';
+import avonLogo from '@/assets/brands/avon.png';
 
 const BrandsSection = () => {
   const categories = [
@@ -38,7 +45,7 @@ const BrandsSection = () => {
       icon: Shirt,
       title: "Moda Infantil",
       brands: [
-        { name: "Acostamento", logo: null },
+        { name: "Acostamento", logo: acostamentoKidsLogo },
         { name: "Hering", logo: heringLogo },
         { name: "Bento é Fábula", logo: bentoFabulaLogo },
         { name: "Magia Doce", logo: magiaDoceLogo },
@@ -55,13 +62,13 @@ const BrandsSection = () => {
       icon: Users,
       title: "Infanto Juvenil",
       brands: [
-        { name: "Acostamento", logo: null },
+        { name: "Acostamento", logo: acostamentoLogo },
         { name: "Hering", logo: heringLogo },
         { name: "Bento é Fábula", logo: bentoFabulaLogo },
-        { name: "Farm Futura", logo: null },
+        { name: "Farm Futura", logo: farmFuturaLogo },
         { name: "Alekids", logo: alekidsLogo },
         { name: "Lua Encantada", logo: luaEncantadaLogo },
-        { name: "BaseD", logo: null },
+        { name: "BaseD", logo: basedLogo },
         { name: "Vira&Mexe", logo: viraMexeLogo },
         { name: "Selene", logo: seleneLogo }
       ]
@@ -84,7 +91,8 @@ const BrandsSection = () => {
       icon: Droplets,
       title: "Perfumaria",
       brands: [
-        { name: "Natura", logo: null },
+        { name: "Natura", logo: naturaLogo },
+        { name: "Avon", logo: avonLogo },
         { name: "O Boticário", logo: null },
         { name: "Granado", logo: null }
       ]
@@ -104,6 +112,7 @@ const BrandsSection = () => {
       icon: Puzzle,
       title: "Brinquedos Educativos",
       brands: [
+        { name: "Cativa", logo: cativaLogo },
         { name: "Janod", logo: null },
         { name: "Lume", logo: null },
         { name: "Grow", logo: null },
