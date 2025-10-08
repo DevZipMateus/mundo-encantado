@@ -2,43 +2,100 @@ import React from 'react';
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 import { Baby, Shirt, Users, ShoppingBag, Droplets, Music, Puzzle } from 'lucide-react';
 import Autoplay from 'embla-carousel-autoplay';
+import ufrogLogo from '@/assets/brands/ufrog.png';
+import jujuLeleLogo from '@/assets/brands/juju-lele.png';
+import evidenceBalletLogo from '@/assets/brands/evidence-ballet.png';
+import magiaDoceLogo from '@/assets/brands/magia-doce.png';
+import santaRitaBabyLogo from '@/assets/brands/santa-rita-baby.png';
+import bentoFabulaLogo from '@/assets/brands/bento-fabula.png';
+import fabulaLogo from '@/assets/brands/fabula.png';
 
 const BrandsSection = () => {
   const categories = [
     {
       icon: Baby,
       title: "Moda Bebê",
-      brands: ["Hering", "Fábula e Bento", "Magia Doce", "Alekids", "Lua Encantada", "Santa Rita Baby", "KelyKety", "Rei Rex"]
+      brands: [
+        { name: "Hering", logo: null },
+        { name: "Bento é Fábula", logo: bentoFabulaLogo },
+        { name: "Magia Doce", logo: magiaDoceLogo },
+        { name: "Alekids", logo: null },
+        { name: "Lua Encantada", logo: null },
+        { name: "Santa Rita Baby", logo: santaRitaBabyLogo },
+        { name: "KelyKety", logo: null },
+        { name: "Rei Rex", logo: null }
+      ]
     },
     {
       icon: Shirt,
       title: "Moda Infantil",
-      brands: ["Acostamento", "Hering", "Fábula e Bento", "Magia Doce", "Alekids", "Lua Encantada", "Santa Rita Baby", "KelyKety", "Rei Rex"]
+      brands: [
+        { name: "Acostamento", logo: null },
+        { name: "Hering", logo: null },
+        { name: "Bento é Fábula", logo: bentoFabulaLogo },
+        { name: "Magia Doce", logo: magiaDoceLogo },
+        { name: "Alekids", logo: null },
+        { name: "Lua Encantada", logo: null },
+        { name: "Santa Rita Baby", logo: santaRitaBabyLogo },
+        { name: "KelyKety", logo: null },
+        { name: "Rei Rex", logo: null },
+        { name: "Fábula", logo: fabulaLogo }
+      ]
     },
     {
       icon: Users,
       title: "Infanto Juvenil",
-      brands: ["Acostamento", "Hering", "Fábula e Bento", "Farm Futura", "Alekids", "Lua Encantada", "BaseD"]
+      brands: [
+        { name: "Acostamento", logo: null },
+        { name: "Hering", logo: null },
+        { name: "Bento é Fábula", logo: bentoFabulaLogo },
+        { name: "Farm Futura", logo: null },
+        { name: "Alekids", logo: null },
+        { name: "Lua Encantada", logo: null },
+        { name: "BaseD", logo: null }
+      ]
     },
     {
       icon: ShoppingBag,
       title: "Acessórios",
-      brands: ["Juju e Lele Laços", "Hering", "UFrog", "Janod", "Lume", "Natura"]
+      brands: [
+        { name: "Juju e Lele Laços", logo: jujuLeleLogo },
+        { name: "Hering", logo: null },
+        { name: "UFrog", logo: ufrogLogo },
+        { name: "Janod", logo: null },
+        { name: "Lume", logo: null },
+        { name: "Natura", logo: null },
+        { name: "Fábula", logo: fabulaLogo }
+      ]
     },
     {
       icon: Droplets,
       title: "Perfumaria",
-      brands: ["Natura", "O Boticário", "Granado"]
+      brands: [
+        { name: "Natura", logo: null },
+        { name: "O Boticário", logo: null },
+        { name: "Granado", logo: null }
+      ]
     },
     {
       icon: Music,
       title: "Ballet e Jazz",
-      brands: ["Capezio", "Só Dança", "Lupo"]
+      brands: [
+        { name: "Evidence Ballet", logo: evidenceBalletLogo },
+        { name: "Capezio", logo: null },
+        { name: "Só Dança", logo: null },
+        { name: "Lupo", logo: null }
+      ]
     },
     {
       icon: Puzzle,
       title: "Brinquedos Educativos",
-      brands: ["Janod", "Lume", "Grow", "Estrela"]
+      brands: [
+        { name: "Janod", logo: null },
+        { name: "Lume", logo: null },
+        { name: "Grow", logo: null },
+        { name: "Estrela", logo: null }
+      ]
     }
   ];
 
@@ -86,9 +143,17 @@ const BrandsSection = () => {
                   {category.brands.map((brand, brandIndex) => (
                     <CarouselItem key={brandIndex} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
                       <div className="p-4 bg-white rounded-xl border-2 border-candy-pink-light/30 hover:border-candy-purple-dark/50 transition-all duration-300 hover:transform hover:scale-105 h-24 flex items-center justify-center">
-                        <p className="text-center font-rounded font-semibold text-gray-700 text-sm">
-                          {brand}
-                        </p>
+                        {brand.logo ? (
+                          <img 
+                            src={brand.logo} 
+                            alt={brand.name}
+                            className="max-h-16 max-w-full object-contain"
+                          />
+                        ) : (
+                          <p className="text-center font-rounded font-semibold text-gray-700 text-sm">
+                            {brand.name}
+                          </p>
+                        )}
                       </div>
                     </CarouselItem>
                   ))}
