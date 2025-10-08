@@ -9,6 +9,13 @@ import magiaDoceLogo from '@/assets/brands/magia-doce.png';
 import santaRitaBabyLogo from '@/assets/brands/santa-rita-baby.png';
 import bentoFabulaLogo from '@/assets/brands/bento-fabula.png';
 import fabulaLogo from '@/assets/brands/fabula.png';
+import kellyKetyLogo from '@/assets/brands/kelly-kety.png';
+import reiRexLogo from '@/assets/brands/rei-rex.png';
+import heringLogo from '@/assets/brands/hering.png';
+import luaEncantadaLogo from '@/assets/brands/lua-encantada.png';
+import alekidsLogo from '@/assets/brands/alekids.png';
+import viraMexeLogo from '@/assets/brands/vira-mexe.png';
+import seleneLogo from '@/assets/brands/selene.png';
 
 const BrandsSection = () => {
   const categories = [
@@ -16,14 +23,15 @@ const BrandsSection = () => {
       icon: Baby,
       title: "Moda Bebê",
       brands: [
-        { name: "Hering", logo: null },
+        { name: "Hering", logo: heringLogo },
         { name: "Bento é Fábula", logo: bentoFabulaLogo },
         { name: "Magia Doce", logo: magiaDoceLogo },
-        { name: "Alekids", logo: null },
-        { name: "Lua Encantada", logo: null },
+        { name: "Alekids", logo: alekidsLogo },
+        { name: "Lua Encantada", logo: luaEncantadaLogo },
         { name: "Santa Rita Baby", logo: santaRitaBabyLogo },
-        { name: "KelyKety", logo: null },
-        { name: "Rei Rex", logo: null }
+        { name: "KelyKety", logo: kellyKetyLogo },
+        { name: "Rei Rex", logo: reiRexLogo },
+        { name: "Vira&Mexe", logo: viraMexeLogo }
       ]
     },
     {
@@ -31,15 +39,16 @@ const BrandsSection = () => {
       title: "Moda Infantil",
       brands: [
         { name: "Acostamento", logo: null },
-        { name: "Hering", logo: null },
+        { name: "Hering", logo: heringLogo },
         { name: "Bento é Fábula", logo: bentoFabulaLogo },
         { name: "Magia Doce", logo: magiaDoceLogo },
-        { name: "Alekids", logo: null },
-        { name: "Lua Encantada", logo: null },
+        { name: "Alekids", logo: alekidsLogo },
+        { name: "Lua Encantada", logo: luaEncantadaLogo },
         { name: "Santa Rita Baby", logo: santaRitaBabyLogo },
-        { name: "KelyKety", logo: null },
-        { name: "Rei Rex", logo: null },
-        { name: "Fábula", logo: fabulaLogo }
+        { name: "KelyKety", logo: kellyKetyLogo },
+        { name: "Rei Rex", logo: reiRexLogo },
+        { name: "Fábula", logo: fabulaLogo },
+        { name: "Vira&Mexe", logo: viraMexeLogo }
       ]
     },
     {
@@ -47,12 +56,14 @@ const BrandsSection = () => {
       title: "Infanto Juvenil",
       brands: [
         { name: "Acostamento", logo: null },
-        { name: "Hering", logo: null },
+        { name: "Hering", logo: heringLogo },
         { name: "Bento é Fábula", logo: bentoFabulaLogo },
         { name: "Farm Futura", logo: null },
-        { name: "Alekids", logo: null },
-        { name: "Lua Encantada", logo: null },
-        { name: "BaseD", logo: null }
+        { name: "Alekids", logo: alekidsLogo },
+        { name: "Lua Encantada", logo: luaEncantadaLogo },
+        { name: "BaseD", logo: null },
+        { name: "Vira&Mexe", logo: viraMexeLogo },
+        { name: "Selene", logo: seleneLogo }
       ]
     },
     {
@@ -60,12 +71,13 @@ const BrandsSection = () => {
       title: "Acessórios",
       brands: [
         { name: "Juju e Lele Laços", logo: jujuLeleLogo },
-        { name: "Hering", logo: null },
+        { name: "Hering", logo: heringLogo },
         { name: "UFrog", logo: ufrogLogo },
         { name: "Janod", logo: null },
         { name: "Lume", logo: null },
         { name: "Natura", logo: null },
-        { name: "Fábula", logo: fabulaLogo }
+        { name: "Fábula", logo: fabulaLogo },
+        { name: "Vira&Mexe", logo: viraMexeLogo }
       ]
     },
     {
@@ -84,7 +96,8 @@ const BrandsSection = () => {
         { name: "Evidence Ballet", logo: evidenceBalletLogo },
         { name: "Capezio", logo: null },
         { name: "Só Dança", logo: null },
-        { name: "Lupo", logo: null }
+        { name: "Lupo", logo: null },
+        { name: "Selene", logo: seleneLogo }
       ]
     },
     {
