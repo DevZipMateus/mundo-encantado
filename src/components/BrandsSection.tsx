@@ -25,6 +25,8 @@ import naturaLogo from '@/assets/brands/natura.png';
 import avonLogo from '@/assets/brands/avon.png';
 import estrelaLogo from '@/assets/brands/estrela.png';
 import oBoticarioLogo from '@/assets/brands/o-boticario.png';
+import growLogo from '@/assets/brands/grow.png';
+import capezioLogo from '@/assets/brands/capezio.png';
 
 const BrandsSection = () => {
   const categories = [
@@ -104,7 +106,7 @@ const BrandsSection = () => {
       title: "Ballet e Jazz",
       brands: [
         { name: "Evidence Ballet", logo: evidenceBalletLogo },
-        { name: "Capezio", logo: null },
+        { name: "Capezio", logo: capezioLogo },
         { name: "Só Dança", logo: null },
         { name: "Lupo", logo: null },
         { name: "Selene", logo: seleneLogo }
@@ -117,7 +119,7 @@ const BrandsSection = () => {
         { name: "Cativa", logo: cativaLogo },
         { name: "Janod", logo: null },
         { name: "Lume", logo: null },
-        { name: "Grow", logo: null },
+        { name: "Grow", logo: growLogo },
         { name: "Estrela", logo: estrelaLogo }
       ]
     }
