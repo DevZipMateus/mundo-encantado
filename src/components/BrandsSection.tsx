@@ -31,6 +31,7 @@ import lumeLogo from '@/assets/brands/lume.png';
 import lupoLogo from '@/assets/brands/lupo.png';
 import soDancaLogo from '@/assets/brands/so-danca.png';
 import granadoLogo from '@/assets/brands/granado.png';
+import janodLogo from '@/assets/brands/janod.png';
 
 const BrandsSection = () => {
   const categories = [
@@ -88,7 +89,7 @@ const BrandsSection = () => {
         { name: "Juju e Lele Laços", logo: jujuLeleLogo },
         { name: "Hering", logo: heringLogo },
         { name: "UFrog", logo: ufrogLogo },
-        { name: "Janod", logo: null },
+        { name: "Janod", logo: janodLogo },
         { name: "Lume", logo: lumeLogo },
         { name: "Natura", logo: naturaLogo },
         { name: "Fábula", logo: fabulaLogo },
@@ -121,7 +122,7 @@ const BrandsSection = () => {
       title: "Brinquedos Educativos",
       brands: [
         { name: "Cativa", logo: cativaLogo },
-        { name: "Janod", logo: null },
+        { name: "Janod", logo: janodLogo },
         { name: "Lume", logo: lumeLogo },
         { name: "Grow", logo: growLogo },
         { name: "Estrela", logo: estrelaLogo }
