@@ -27,6 +27,10 @@ import estrelaLogo from '@/assets/brands/estrela.png';
 import oBoticarioLogo from '@/assets/brands/o-boticario.png';
 import growLogo from '@/assets/brands/grow.png';
 import capezioLogo from '@/assets/brands/capezio.png';
+import lumeLogo from '@/assets/brands/lume.png';
+import lupoLogo from '@/assets/brands/lupo.png';
+import soDancaLogo from '@/assets/brands/so-danca.png';
+import granadoLogo from '@/assets/brands/granado.png';
 
 const BrandsSection = () => {
   const categories = [
@@ -85,8 +89,8 @@ const BrandsSection = () => {
         { name: "Hering", logo: heringLogo },
         { name: "UFrog", logo: ufrogLogo },
         { name: "Janod", logo: null },
-        { name: "Lume", logo: null },
-        { name: "Natura", logo: null },
+        { name: "Lume", logo: lumeLogo },
+        { name: "Natura", logo: naturaLogo },
         { name: "Fábula", logo: fabulaLogo },
         { name: "Vira&Mexe", logo: viraMexeLogo }
       ]
@@ -98,7 +102,7 @@ const BrandsSection = () => {
         { name: "Natura", logo: naturaLogo },
         { name: "Avon", logo: avonLogo },
         { name: "O Boticário", logo: oBoticarioLogo },
-        { name: "Granado", logo: null }
+        { name: "Granado", logo: granadoLogo }
       ]
     },
     {
@@ -107,8 +111,8 @@ const BrandsSection = () => {
       brands: [
         { name: "Evidence Ballet", logo: evidenceBalletLogo },
         { name: "Capezio", logo: capezioLogo },
-        { name: "Só Dança", logo: null },
-        { name: "Lupo", logo: null },
+        { name: "Só Dança", logo: soDancaLogo },
+        { name: "Lupo", logo: lupoLogo },
         { name: "Selene", logo: seleneLogo }
       ]
     },
@@ -118,7 +122,7 @@ const BrandsSection = () => {
       brands: [
         { name: "Cativa", logo: cativaLogo },
         { name: "Janod", logo: null },
-        { name: "Lume", logo: null },
+        { name: "Lume", logo: lumeLogo },
         { name: "Grow", logo: growLogo },
         { name: "Estrela", logo: estrelaLogo }
       ]
