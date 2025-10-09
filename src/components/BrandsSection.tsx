@@ -24,6 +24,7 @@ import acostamentoLogo from '@/assets/brands/acostamento.png';
 import naturaLogo from '@/assets/brands/natura.png';
 import avonLogo from '@/assets/brands/avon.png';
 import estrelaLogo from '@/assets/brands/estrela.png';
+import oBoticarioLogo from '@/assets/brands/o-boticario.png';
 
 const BrandsSection = () => {
   const categories = [
@@ -94,7 +95,7 @@ const BrandsSection = () => {
       brands: [
         { name: "Natura", logo: naturaLogo },
         { name: "Avon", logo: avonLogo },
-        { name: "O Boticário", logo: null },
+        { name: "O Boticário", logo: oBoticarioLogo },
         { name: "Granado", logo: null }
       ]
     },
