@@ -23,6 +23,7 @@ import basedLogo from '@/assets/brands/based.png';
 import acostamentoLogo from '@/assets/brands/acostamento.png';
 import naturaLogo from '@/assets/brands/natura.png';
 import avonLogo from '@/assets/brands/avon.png';
+import estrelaLogo from '@/assets/brands/estrela.png';
 
 const BrandsSection = () => {
   const categories = [
@@ -116,7 +117,7 @@ const BrandsSection = () => {
         { name: "Janod", logo: null },
         { name: "Lume", logo: null },
         { name: "Grow", logo: null },
-        { name: "Estrela", logo: null }
+        { name: "Estrela", logo: estrelaLogo }
       ]
     }
   ];
