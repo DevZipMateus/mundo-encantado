@@ -119,7 +119,7 @@ const GallerySection = () => {
 
         <div className="text-center mt-12">
           <p className="text-gray-600 font-rounded mb-6">
-            Quer fazer parte da nossa galeria? Marque @mundoencantado nas suas fotos!
+            Quer fazer parte da nossa galeria? Marque @mundoencantado.ibiruba nas suas fotos!
           </p>
           <button className="bg-gradient-to-r from-candy-pink-dark to-candy-purple-dark text-white px-8 py-3 rounded-full font-playful font-bold hover:transform hover:scale-105 transition-all duration-300">
             Veja Mais no Instagram
