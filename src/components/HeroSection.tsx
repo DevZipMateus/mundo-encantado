@@ -59,7 +59,7 @@ const HeroSection = () => {
           </div>
           
           <div className="mt-8 md:mt-12 text-white/80 animate-fade-in drop-shadow-lg px-4" style={{animationDelay: '0.8s', textShadow: '0px 2px 4px rgba(0,0,0,0.5)'}}>
-            <p className="text-xs md:text-sm mb-1 md:mb-2">📍 Firmino de Paula, 741 - Centro, Ibirubá/RS</p>
+            <p className="text-xs md:text-sm mb-1 md:mb-2">📍 Rua do Comércio, 954 - Centro, Ibirubá/RS</p>
             <p className="text-xs md:text-sm">📱 (54) 99164-7113</p>
           </div>
         </div>

@@ -3,7 +3,7 @@ import React from 'react';
 import { MapPin, Clock, Phone, Mail, Navigation } from 'lucide-react';
 
 const LocationSection = () => {
-  const address = "R. Firmino de Paula, 741 - 5, Centro, Ibirubá - RS, 98200-000";
+  const address = "Rua do Comércio, 954, Centro, Ibirubá - RS, 98200-000";
   const phoneNumber = "5499164-7113";
   
   const handleNavigationClick = () => {
@@ -40,7 +40,7 @@ const LocationSection = () => {
                     Nosso Endereço
                   </h3>
                   <p className="text-sm sm:text-base text-gray-600 font-rounded break-words">
-                    R. Firmino de Paula, 741 - 5<br />
+                    Rua do Comércio, 954<br />
                     Centro, Ibirubá - RS, 98200-000
                   </p>
                 </div>
@@ -118,7 +118,7 @@ const LocationSection = () => {
           {/* Mapa do Google Maps */}
           <div className="card-candy p-2 h-64 sm:h-80 md:h-96 lg:h-full lg:min-h-[400px] order-first lg:order-last">
             <iframe
-              src="https://maps.google.com/maps?q=R.%20Firmino%20de%20Paula,%20741,%20Centro,%20Ibirubá%20RS&t=&z=17&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=Rua%20do%20Comércio,%20954,%20Centro,%20Ibirubá%20RS&t=&z=17&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0, borderRadius: '1rem' }}
