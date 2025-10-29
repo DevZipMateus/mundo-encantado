@@ -1,10 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +20,7 @@ const Header = () => {
   const navItems = [
     { name: 'Início', href: '#inicio' },
     { name: 'Sobre', href: '#sobre' },
+    { name: 'Vitrine', href: '/vitrine' },
     { name: 'Produtos', href: '#produtos' },
     { name: 'Depoimentos', href: '#depoimentos' },
     { name: 'Localização', href: '#localizacao' },
@@ -41,16 +44,28 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="font-playful font-medium text-sm lg:text-base text-gray-700 hover:text-candy-purple-dark transition-colors duration-300 relative group whitespace-nowrap"
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-candy-pink-dark to-candy-purple-dark transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isExternal = item.href.startsWith('#');
+              return isExternal ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="font-playful font-medium text-sm lg:text-base text-gray-700 hover:text-candy-purple-dark transition-colors duration-300 relative group whitespace-nowrap"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-candy-pink-dark to-candy-purple-dark transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="font-playful font-medium text-sm lg:text-base text-gray-700 hover:text-candy-purple-dark transition-colors duration-300 relative group whitespace-nowrap"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-candy-pink-dark to-candy-purple-dark transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              );
+            })}
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,16 +86,28 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-t border-candy-pink/20 shadow-lg">
             <div className="px-4 py-4 space-y-2">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block font-playful font-medium text-gray-700 hover:text-candy-purple-dark transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-candy-pink/10"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
+              {navItems.map((item) => {
+                const isExternal = item.href.startsWith('#');
+                return isExternal ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="block font-playful font-medium text-gray-700 hover:text-candy-purple-dark transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-candy-pink/10"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="block font-playful font-medium text-gray-700 hover:text-candy-purple-dark transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-candy-pink/10"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         )}
