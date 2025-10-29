@@ -1,44 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 
 const Vitrine = () => {
-  const [iframeHeight, setIframeHeight] = useState('calc(100vh - 80px - 63px)');
-
   useEffect(() => {
     // Atualizar o título da página
     document.title = 'Demonstração de Vitrine - Mundo Encantado';
     
-    const calculateHeight = () => {
-      const windowHeight = window.innerHeight;
-      const headerHeight = 80;
-      const badgeHeight = 63;
-      const calculatedHeight = windowHeight - headerHeight - badgeHeight;
-      setIframeHeight(`${calculatedHeight}px`);
-    };
-
-    calculateHeight();
-    window.addEventListener('resize', calculateHeight);
+    // Remover scroll do body
+    document.body.style.overflow = 'hidden';
+    
     return () => {
-      window.removeEventListener('resize', calculateHeight);
-      // Restaurar título ao sair
+      // Restaurar configurações ao sair
+      document.body.style.overflow = '';
       document.title = 'Mundo Encantado';
     };
   }, []);
 
   return (
-    <div className="w-full h-screen overflow-hidden flex flex-col">
+    <div className="fixed inset-0 w-full h-screen overflow-hidden flex flex-col">
       {/* Header fixo - 80px */}
-      <div className="h-20">
+      <div className="h-20 flex-shrink-0">
         <Header />
       </div>
 
       {/* Iframe - altura dinâmica */}
-      <div className="w-full flex-1">
+      <div className="w-full flex-1 overflow-hidden">
         <iframe
           src="https://v4.egestor.com.br/vitrine/?s=lojamundoencantado"
           style={{
             width: '100%',
-            height: iframeHeight,
+            height: '100%',
             border: 'none',
             display: 'block'
           }}
