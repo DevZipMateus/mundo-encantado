@@ -17,14 +17,14 @@ const Vitrine = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 w-full h-screen overflow-hidden flex flex-col">
+    <div className="w-full h-screen overflow-hidden flex flex-col">
       {/* Header fixo - 80px */}
       <div className="h-20 flex-shrink-0">
         <Header />
       </div>
 
-      {/* Iframe - altura dinâmica */}
-      <div className="w-full flex-1 overflow-hidden">
+      {/* Iframe - ocupa espaço restante menos badge (63px) */}
+      <div className="w-full overflow-hidden" style={{ height: 'calc(100vh - 80px - 63px)' }}>
         <iframe
           src="https://v4.egestor.com.br/vitrine/?s=lojamundoencantado"
           style={{
