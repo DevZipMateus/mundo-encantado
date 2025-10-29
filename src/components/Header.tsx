@@ -17,7 +17,7 @@ const Header = () => {
 
   const navItems = [
     { name: 'Início', href: '#inicio' },
-    { name: 'Vitrine', href: 'https://v4.egestor.com.br/vitrine/?s=lojamundoencantado' },
+    { name: 'Vitrine', href: '/vitrine' },
     { name: 'Sobre', href: '#sobre' },
     { name: 'Depoimentos', href: '#depoimentos' },
     { name: 'Localização', href: '#localizacao' },
