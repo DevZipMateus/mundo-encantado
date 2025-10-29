@@ -234,3 +234,17 @@ body, html {
     margin-right: 0;
   }
 }
+
+/* Badge MonteSite - Posicionamento fixo no rodapé */
+#montesite-footer-badge,
+#montesite-footer-badge > *,
+#montesite-footer-badge iframe {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 63px !important;
+  z-index: 10 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}

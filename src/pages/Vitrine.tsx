@@ -15,6 +15,17 @@ const Vitrine = () => {
     document.body.style.margin = '0';
     document.body.style.padding = '0';
     
+    // Configurar estilos para o badge MonteSite
+    const badgeElement = document.getElementById('montesite-footer-badge');
+    if (badgeElement) {
+      badgeElement.style.position = 'fixed';
+      badgeElement.style.bottom = '0';
+      badgeElement.style.left = '0';
+      badgeElement.style.width = '100%';
+      badgeElement.style.height = '63px';
+      badgeElement.style.zIndex = '10';
+    }
+    
     return () => {
       document.documentElement.style.overflow = 'auto';
       document.documentElement.style.height = 'auto';
