@@ -178,7 +178,8 @@ const ContactSection = () => {
                 <div className="text-sm text-gray-600 space-y-1">
                   <p>📍 Firmino de Paula, 741, Sala 5</p>
                   <p>🏢 Centro, Ibirubá/RS</p>
-                  <p>⏰ Seg-Sex: 8h às 18h | Sáb: 8h às 17h</p>
+                  <p>⏰ Seg-Sex: 08:30h ao 12h e das 13:30h às 18:30h</p>
+                  <p>⏰ Sáb: 08:30 às 16:00 (sem fechar ao meio dia)</p>
                 </div>
               </div>
             </div>
