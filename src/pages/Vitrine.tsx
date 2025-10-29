@@ -26,11 +26,11 @@ const Vitrine = () => {
           <Header />
         </div>
         
-        {/* Iframe - altura calculada: 100vh - 80px (header) - 63px (badge) */}
+        {/* Iframe - altura fixa de 700px */}
         <iframe 
           src="https://v4.egestor.com.br/vitrine/?s=lojamundoencantado"
           className="w-full border-none"
-          style={{ height: 'calc(100vh - 80px - 63px)' }}
+          style={{ height: '700px' }}
           title="Vitrine Mundo Encantado"
         />
       </div>
