@@ -1,10 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,13 +19,42 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Início', href: '#inicio' },
-    { name: 'Vitrine', href: '/vitrine' },
-    { name: 'Sobre', href: '#sobre' },
-    { name: 'Depoimentos', href: '#depoimentos' },
-    { name: 'Localização', href: '#localizacao' },
-    { name: 'Contato', href: '#contato' }
+    { name: 'Início', href: '/', anchor: '#inicio' },
+    { name: 'Vitrine', href: '/vitrine', anchor: null },
+    { name: 'Sobre', href: '/', anchor: '#sobre' },
+    { name: 'Depoimentos', href: '/', anchor: '#depoimentos' },
+    { name: 'Localização', href: '/', anchor: '#localizacao' },
+    { name: 'Contato', href: '/', anchor: '#contato' }
   ];
+
+  const handleNavigation = (item: typeof navItems[0]) => {
+    setIsMenuOpen(false);
+    
+    // Se for a página Vitrine, navega diretamente
+    if (item.href === '/vitrine') {
+      navigate('/vitrine');
+      return;
+    }
+    
+    // Se estiver na home e tem âncora, faz scroll suave
+    if (location.pathname === '/' && item.anchor) {
+      const element = document.querySelector(item.anchor);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Se não estiver na home, navega para a home e depois para a âncora
+      navigate(item.href + (item.anchor || ''));
+      setTimeout(() => {
+        if (item.anchor) {
+          const element = document.querySelector(item.anchor);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }, 100);
+    }
+  };
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -42,14 +74,14 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => handleNavigation(item)}
                 className="font-playful font-medium text-sm lg:text-base text-gray-700 hover:text-candy-purple-dark transition-colors duration-300 relative group whitespace-nowrap"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-candy-pink-dark to-candy-purple-dark transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </button>
             ))}
           </div>
 
@@ -72,14 +104,13 @@ const Header = () => {
           <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-t border-candy-pink/20 shadow-lg">
             <div className="px-4 py-4 space-y-2">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="block font-playful font-medium text-gray-700 hover:text-candy-purple-dark transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-candy-pink/10"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavigation(item)}
+                  className="w-full text-left block font-playful font-medium text-gray-700 hover:text-candy-purple-dark transition-colors duration-300 py-3 px-2 rounded-lg hover:bg-candy-pink/10"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
             </div>
           </div>
