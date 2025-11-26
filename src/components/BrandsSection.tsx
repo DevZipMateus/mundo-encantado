@@ -94,6 +94,7 @@ const BrandsSection = () => {
         { name: "Juju e Lele Laços", logo: jujuLeleLogo },
         { name: "Hering", logo: heringLogo },
         { name: "UFrog", logo: ufrogLogo },
+        { name: "Bento é Fábula", logo: bentoFabulaLogo },
         { name: "Fábula", logo: fabulaLogo },
         { name: "Vira&Mexe", logo: viraMexeLogo }
       ]
