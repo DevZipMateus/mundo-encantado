@@ -98,9 +98,7 @@ const BrandsSection = () => {
       title: "Perfumaria",
       brands: [
         { name: "Natura", logo: naturaLogo },
-        { name: "Avon", logo: avonLogo },
-        { name: "O Boticário", logo: oBoticarioLogo },
-        { name: "Granado", logo: granadoLogo }
+        { name: "Avon", logo: avonLogo }
       ]
     },
     {
