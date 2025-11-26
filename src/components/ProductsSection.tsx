@@ -50,7 +50,7 @@ const ProductsSection = () => {
       icon: Puzzle,
       title: "Brinquedos Educativos",
       description: "Diversão que estimula o aprendizado e desenvolvimento",
-      features: ["Jogos pedagógicos", "Quebra-cabeças", "Livros infantis", "Material escolar"],
+      features: ["Jogos pedagógicos", "Quebra-cabeças", "Instrumentos de musicalização"],
       brands: ["Janod", "Lume", "Grow", "Estrela"]
     }
   ];
