@@ -65,8 +65,9 @@ const Footer = () => {
               <div className="flex items-center justify-center md:justify-start">
                 <MapPin className="w-4 h-4 mr-2 text-candy-green" />
                 <span className="text-white/80">
-                  Firmino de Paula, 741, Sala 5<br />
-                  Centro, Ibirubá/RS
+                  Rua do Comércio, 954<br />
+                  Centro, Ibirubá/RS<br />
+                  CEP 98200-000
                 </span>
               </div>
               <div className="flex items-center justify-center md:justify-start">
