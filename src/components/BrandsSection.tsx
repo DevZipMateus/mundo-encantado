@@ -33,6 +33,8 @@ import soDancaLogo from '@/assets/brands/so-danca.png';
 import granadoLogo from '@/assets/brands/granado.png';
 import janodLogo from '@/assets/brands/janod.png';
 import fabulaNewLogo from '@/assets/brands/fabula-new.png';
+import glossLogo from '@/assets/brands/gloss.png';
+import fabulaInfantoLogo from '@/assets/brands/fabula-infanto.png';
 
 const BrandsSection = () => {
   const categories = [
@@ -80,7 +82,9 @@ const BrandsSection = () => {
         { name: "Alekids", logo: alekidsLogo },
         { name: "Lua Encantada", logo: luaEncantadaLogo },
         { name: "BaseD", logo: basedLogo },
-        { name: "Vira&Mexe", logo: viraMexeLogo }
+        { name: "Vira&Mexe", logo: viraMexeLogo },
+        { name: "Gloss", logo: glossLogo },
+        { name: "Fábula", logo: fabulaInfantoLogo }
       ]
     },
     {
