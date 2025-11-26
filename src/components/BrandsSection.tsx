@@ -80,8 +80,7 @@ const BrandsSection = () => {
         { name: "Alekids", logo: alekidsLogo },
         { name: "Lua Encantada", logo: luaEncantadaLogo },
         { name: "BaseD", logo: basedLogo },
-        { name: "Vira&Mexe", logo: viraMexeLogo },
-        { name: "Selene", logo: seleneLogo }
+        { name: "Vira&Mexe", logo: viraMexeLogo }
       ]
     },
     {
