@@ -22,7 +22,7 @@ const ProductsSection = () => {
       icon: Users,
       title: "Infanto Juvenil",
       description: "Estilo moderno para pré-adolescentes que querem se expressar",
-      features: ["10 a 16 anos", "Tendências atuais", "Autoestima", "Personalidade"],
+      features: ["12 a 20 anos", "Tendências atuais", "Autoestima", "Personalidade"],
       brands: ["Acostamento", "Hering", "Fábula e Bento", "Farm Futura", "Alekids", "Lua Encantada", "BaseD"]
     },
     {
