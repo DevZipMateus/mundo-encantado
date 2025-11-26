@@ -106,9 +106,6 @@ const BrandsSection = () => {
       title: "Ballet e Jazz",
       brands: [
         { name: "Evidence Ballet", logo: evidenceBalletLogo },
-        { name: "Capezio", logo: capezioLogo },
-        { name: "Só Dança", logo: soDancaLogo },
-        { name: "Lupo", logo: lupoLogo },
         { name: "Selene", logo: seleneLogo }
       ]
     },
