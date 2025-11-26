@@ -32,6 +32,7 @@ import lupoLogo from '@/assets/brands/lupo.png';
 import soDancaLogo from '@/assets/brands/so-danca.png';
 import granadoLogo from '@/assets/brands/granado.png';
 import janodLogo from '@/assets/brands/janod.png';
+import fabulaNewLogo from '@/assets/brands/fabula-new.png';
 
 const BrandsSection = () => {
   const categories = [
@@ -41,6 +42,7 @@ const BrandsSection = () => {
       brands: [
         { name: "Hering", logo: heringLogo },
         { name: "Bento é Fábula", logo: bentoFabulaLogo },
+        { name: "Fábula", logo: fabulaNewLogo },
         { name: "Magia Doce", logo: magiaDoceLogo },
         { name: "Alekids", logo: alekidsLogo },
         { name: "Lua Encantada", logo: luaEncantadaLogo },
