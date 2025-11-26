@@ -116,7 +116,6 @@ const BrandsSection = () => {
         { name: "Cativa", logo: cativaLogo },
         { name: "Janod", logo: janodLogo },
         { name: "Lume", logo: lumeLogo },
-        { name: "Grow", logo: growLogo },
         { name: "Estrela", logo: estrelaLogo }
       ]
     }
